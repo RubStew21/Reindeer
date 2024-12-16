@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santa's Reindeer</title>
+    <style>
+        body {
+            background-color: #2d5a27;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMmQ1YTI3Ij48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IC00TDQgNlpNLTQgNkw2IC00WiIgc3Ryb2tlPSIjMjE0MzFjIiBzdHJva2Utd2lkdGg9IjEiPjwvcGF0aD4KPC9zdmc+');
+            margin: 0;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff0000;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 3em;
+            margin-bottom: 40px;
+        }
+
+        .reindeer-card {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease;
+        }
+
+        .reindeer-card:hover {
+            transform: scale(1.02);
+        }
+
+        .reindeer-card.left {
+            flex-direction: row;
+        }
+
+        .reindeer-card.right {
+            flex-direction: row-reverse;
+        }
+
+        .reindeer-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 5px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .reindeer-info {
+            padding: 0 30px;
+            flex: 1;
+        }
+
+        .reindeer-name {
+            font-size: 2em;
+            color: #ff0000;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .reindeer-description {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .surprise-link {
+            color: #ff0000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .surprise-link:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff0000;
+        }
+
+        .snowflake {
+            position: fixed;
+            color: white;
+            font-size: 1em;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎄 Santa's Magical Reindeer 🎄</h1>
+
+        <div class="reindeer-card left">
+            <img src="https://example.com/dasher.jpg" alt="Dasher" class="reindeer-image">
+            <div class="reindeer-info">
+                <div class="reindeer-name">Dasher</div>
+                <div class="reindeer-description">The fastest of Santa's reindeer, Dasher leads with incredible speed and agility, helping to ensure all presents are delivered on time.</div>
+            </div>
+        </div>
+
+        <div class="reindeer-card right">
+            <img src="https://example.com/dancer.jpg" alt="Dancer" class="reindeer-image">
+            <div class="reindeer-info">
+                <div class="reindeer-name">Dancer</div>
+                <div class="reindeer-description">Known for grace and elegance, Dancer brings style to the team with perfectly choreographed movements through the night sky.</div>
+            </div>
+        </div>
+
+        <div class="reindeer-card left">
+            <img src="https://example.com/prancer.jpg" alt="Prancer" class="reindeer-image">
+            <div class="reindeer-info">
+                <div class="reindeer-name">Prancer</div>
+                <div class="reindeer-description">The most spirited of the group, Prancer's boundless energy keeps the team motivated throughout their Christmas Eve journey.</div>
+            </div>
+        </div>
+
+        <div class="reindeer-card right">
+            <img src="https://example.com/vixen.jpg" alt="Vixen" class="reindeer-image">
+            <div class="reindeer-info">
+                <div class="reindeer-name">Vixen</div>
+                <div class="reindeer-description">Beautiful and swift, Vixen's charm and determination help guide the sleigh through even the stormiest nights.</div>
+            </div>
+        </div>
+
+        <div class="reindeer-card left">
+            <img src="https://example.com/comet.jpg" alt="Comet" class="reindeer-image">
+            <div class="reindeer-info">
+                <div class="reindeer-name">Comet</div>
+                <div class="reindeer-description">
+                    <a href="https://docs.google.com/document/d/1wGWhJejqq4aE_Wk5KsN63tTJlma5f5HreDkEEotZf3M/edit?usp=sharing" class="surprise-link">Santa Surprise! 🎅</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(snowflake);
+            setTimeout(() => snowflake.remove(), 5000);
+        }
+
+        setInterval(createSnowflake, 100);
+    </script>
+</body>
+</html>
